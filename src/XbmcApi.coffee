@@ -28,13 +28,13 @@ class XbmcApi
 
   loadModules: =>
     debug 'loadModules'
-    require(module).mixin @ for module in [
-      './Media'
-      './Notifications'
-      './Handlers'
-      './Player'
-      './Input'
-      ]
+    module.mixin @ for module in [
+      require('./Media')
+      require('./Notifications')
+      require('./Handlers')
+      require('./Player')
+      require('./Input')
+    ]
 
   setConnection: (newConnection) =>
     debug 'setConnection'
